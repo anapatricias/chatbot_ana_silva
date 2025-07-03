@@ -1,9 +1,13 @@
 import os
+import string
 from datetime import datetime
 
-def obter_resposta(texto: str) -> str:
-    comando: str = texto.lower()
+def normalizar(texto:str) -> str:
+    return texto.lower().translate(str.maketrans('','',string.punctuation)).strip()
 
+def obter_resposta(texto: str) -> str:
+    comando = normalizar(texto)
+    
     # if comando in ('olá', 'boa tarde', 'bom dia'):
     #    return 'Olá tudo bem!'
     # if comando == 'como estás':
@@ -42,9 +46,14 @@ def obter_resposta(texto: str) -> str:
           
 
     for chave, resposta in respostas.items():
-             for frase in chave:
-                 if frase in comando:
-                     return resposta
+        if isinstance (chave,tuple):
+          for subchave in chave:
+             if subchave in comando:
+                 return resposta
+        else:
+            if chave in comando:
+                return resposta
+      
             
     return f'Desculpa, não entendi a questão! {texto}'
 
