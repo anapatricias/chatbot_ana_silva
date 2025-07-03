@@ -25,6 +25,7 @@ def obter_resposta(texto: str) -> str:
          ('olá', 'boa tarde', 'bom dia'): 'Olá tudo bem!',
         'como estás': 'Estou bem, obrigado!',
         ('bye', 'adeus', 'tchau'): 'Gostei de falar contigo! Até breve...',
+        #novos comentários
           'qual é o teu nome?':'O meu nome é Bot!', 
           'quantos anos tens?': 'Sou muito jovem',
           'como está a meteorologia em Portugal nos últimos dias?':'Está muito calor!',
