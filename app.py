@@ -42,8 +42,9 @@ def obter_resposta(texto: str) -> str:
          if isinstance(chave, tuple):
             if comando in chave:
                  return resposta
-    elif chave in comando:
-    return resposta
+    else: 
+         if chave in comando:
+          return resposta
 
     return f'Desculpa, não entendi a questão! {texto}'
 
