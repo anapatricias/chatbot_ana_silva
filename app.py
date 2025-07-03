@@ -42,15 +42,10 @@ def obter_resposta(texto: str) -> str:
           
 
     for chave, resposta in respostas.items():
-         if isinstance(chave, tuple):
              for frase in chave:
                  if frase in comando:
                      return resposta
             
-    else: 
-         if chave in comando:
-          return resposta
-
     return f'Desculpa, não entendi a questão! {texto}'
 
 
